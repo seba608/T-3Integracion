@@ -158,7 +158,7 @@ def mostrar_nave(nave_id):
 
 
 @app.route('/planeta/<planeta_id>')
-def mostrar_planeta(planeta_id):
+def mostrar_planeta(planeta_id):lgo como
     query = """query {
                 planet(id: "%s") {
                     name
