@@ -33,6 +33,7 @@ def index():
                 """
     r = make_query(query)
     data = r["data"]["allFilms"]
+    print(data)
     return render_template("index.html", films=data["films"])
 
 
@@ -86,6 +87,7 @@ def mostrar_personaje(personaje_id):
                     hairColor
                     height
                     mass
+                    skinColor
                     skinColor
                     starshipConnection{
                         starships{

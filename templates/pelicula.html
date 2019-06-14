@@ -21,12 +21,14 @@
     }
     </style>
 
+<!-- Navbar brand -->
+      <a class="navbar-brand" href="/">Home</a>
 
     <div class="container">
         <center> <h1>{{ pelicula.title }}</h1>  </center>
         <h3> Release Date: </h3><p> {{ pelicula.releaseDate }} </p>
         <h3> Director: </h3><p> {{ pelicula.director }} </p>
-        <h3> Producer(s): </h3><p> {{ pelicula.producers }} </p>
+        <h3> Producer(s): </h3><p> {{ ' - '.join(pelicula.producers) }} </p>
         <h3> Episode Number: </h3><p> {{ pelicula.episodeID }} </p>
         <h3> Abstract: </h3><p> {{ pelicula.openingCrawl }} </p>
         <h3> Characters:</h3>

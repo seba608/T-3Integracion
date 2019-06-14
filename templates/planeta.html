@@ -21,15 +21,17 @@
     }
     </style>
 
+<!-- Navbar brand -->
+      <a class="navbar-brand" href="/">Home</a>
 
     <div class="container">
         <center> <h1>{{ variable.name }}</h1>  </center>
         <h3> Rotation period: </h3><p> {{ variable.rotationPeriod }} </p>
         <h3> Orbital period: </h3><p> {{ variable.orbitalPeriod }} </p>
         <h3> Diameter: </h3><p> {{ variable.diameter }} </p>
-        <h3> Climate: </h3><p> {{ variable.climates }} </p>
+        <h3> Climate: </h3><p> {{ ' - '.join(variable.climates) }} </p>
         <h3> Gravity: </h3><p> {{ variable.gravity }} </p>
-        <h3> Terrain: </h3><p> {{ variable.terrains }} </p>
+        <h3> Terrain: </h3><p> {{ ' - '.join(variable.terrains) }} </p>
         <h3> Surface Water: </h3><p> {{ variable.surfaceWater }} </p>
         <h3> Population: </h3><p> {{ variable.population }} </p>
 

@@ -11,7 +11,7 @@
                 <h3> <a href= "{{ url_for('mostrar_pelicula' ,film_id=pelicula.id) }}"> {{ pelicula.title }} </a></h3>
                 <p> Año de lanzamiento: {{ pelicula.releaseDate[0:4] }} </p>
                 <p> Director: {{ pelicula.director }} </p>
-                <p> Productos(es): {{ pelicula.producers }} </p>
+                <p> Productos(es): {{ ' - '.join(pelicula.producers) }} </p>
                 <p> Número de episodio: {{ pelicula.episodeID }} </p>
                 <details>
                   <summary>Ver más</summary>

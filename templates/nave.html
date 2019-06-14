@@ -21,11 +21,13 @@
     }
     </style>
 
+<!-- Navbar brand -->
+      <a class="navbar-brand" href="/">Home</a>
 
     <div class="container">
         <center> <h1>{{ variable.name }}</h1>  </center>
         <h3> Model: </h3><p> {{ variable.model }} </p>
-        <h3> Manufacturer: </h3><p> {{ variable.manufacturer }} </p>
+        <h3> Manufacturer: </h3><p> {{ " / ".join(variable.manufacturers) }} </p>
         <h3> Cost in credits: </h3><p> {{ variable.costInCredits }} </p>
         <h3> Length: </h3><p> {{ variable.length }} </p>
         <h3> Max atmosphering speed: </h3><p> {{ variable.maxAtmospheringSpeed }} </p>
