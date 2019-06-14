@@ -197,52 +197,5 @@ def mostrar_planeta(planeta_id):
                            pilotos=residents)
 
 
-@app.route('/search', methods=["POST", "GET"])
-def search():
-    if request.method == "POST":
-        input = request.form['entrada']
-        personajes = []
-        naves = []
-        planetas = []
-        peliculas = []
-        vars = ['people', 'starships', 'planets', 'films']
-        for var in vars:
-            r = requests.get('https://swapi.co/api/{}/?search={}'.format(var, input))
-            aux = json.loads(r.text)
-
-            if var == 'people':
-                for elem in aux['results']:
-                    if elem["url"][-3] == '/':
-                        personajes.append((elem['name'], elem["url"][-2]))
-                    else:
-                        personajes.append((elem['name'], elem["url"][-3:-1]))
-
-            elif var == 'starships':
-                for elem in aux['results']:
-                    if elem["url"][-3] == '/':
-                        naves.append((elem['name'], elem["url"][-2]))
-                    else:
-                        naves.append((elem['name'], elem["url"][-3:-1]))
-
-            elif var == 'planets':
-                for elem in aux['results']:
-                    if elem["url"][-3] == '/':
-                        planetas.append((elem['name'], elem["url"][-2]))
-                    else:
-                        planetas.append((elem['name'], elem["url"][-3:-1]))
-
-            else:
-                for elem in aux['results']:
-                    if elem["url"][-3] == '/':
-                        peliculas.append((elem['title'], elem["url"][-2]))
-                    else:
-                        peliculas.append((elem['title'], elem["url"][-3:-1]))
-
-        return render_template("search.html", personajes=personajes, peliculas=peliculas,
-                               naves=naves, planetas=planetas)
-    else:
-        return redirect(url_for('index'))
-
-
 if __name__ == '__main__':
     app.run(debug=True)
